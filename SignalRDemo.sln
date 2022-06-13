@@ -5,6 +5,13 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazerServer", "BlazerServer\BlazerServer.csproj", "{F6754FF1-836D-4B59-8C21-11E4BDFF5E59}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{47184276-EC46-4387-BABF-064F299F0FA4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{28414D94-AF14-40C8-8388-A53C23B34412}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{F6754FF1-836D-4B59-8C21-11E4BDFF5E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6754FF1-836D-4B59-8C21-11E4BDFF5E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6754FF1-836D-4B59-8C21-11E4BDFF5E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28414D94-AF14-40C8-8388-A53C23B34412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28414D94-AF14-40C8-8388-A53C23B34412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28414D94-AF14-40C8-8388-A53C23B34412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28414D94-AF14-40C8-8388-A53C23B34412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

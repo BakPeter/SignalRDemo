@@ -8,6 +8,7 @@ namespace WPFClient
     public partial class MainWindow : Window
     {
         HubConnection connection;
+        HubConnection counterConnection;
         public MainWindow()
         {
             InitializeComponent();
@@ -16,6 +17,11 @@ namespace WPFClient
                 .WithUrl("https://localhost:7245/chathub")
                 .WithAutomaticReconnect()
                 .Build();
+
+            counterConnection = new HubConnectionBuilder()
+            .WithUrl("https://localhost:7245/counterhub")
+            .WithAutomaticReconnect()
+            .Build();
 
             connection.Reconnecting += (sender) =>
             {
@@ -83,6 +89,32 @@ namespace WPFClient
             try
             {
                 connection.InvokeAsync("SendMessage", "WPF Client", messageInput.Text);
+            }
+            catch (Exception ex)
+            {
+                messages.Items.Add(ex.Message);
+            }
+        }
+
+        private async void openCounter_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                await counterConnection.StartAsync();
+                openCounter.IsEnabled = false;
+            }
+            catch (Exception ex)
+            {
+                messages.Items.Add(ex.Message);
+            }
+        }
+
+        private async void incrementCounter_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                await counterConnection.InvokeAsync("AddToTotal",
+                    "WPF Client", 3);
             }
             catch (Exception ex)
             {
